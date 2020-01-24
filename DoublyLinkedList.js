@@ -28,6 +28,21 @@ class DoublyLinkedList {
       this.foot = new _Node(item, this.foot, null);
     }
   }
+
+  insertBefore(item, itemBefore) {
+    const newNode = new _Node(item, null, null)
+    if(!this.head) {
+      return null;
+    } else {
+      let checkItem = this.head;
+      while (checkItem.value !== itemBefore && checkItem === null) {
+        checkItem = checkItem.next;
+      }
+      newNode.prev = checkItem.prev;
+      newNode.next = checkItem;
+      checkItem.prev = newNode; 
+    }
+  }
 }
 
 module.exports = DoublyLinkedList;
