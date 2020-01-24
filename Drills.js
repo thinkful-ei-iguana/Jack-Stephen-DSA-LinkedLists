@@ -100,6 +100,22 @@ function thrdFromEnd(list){
   return res.value;
 }
 
+function dumbFindMid(list){
+  const dumbList = reverseList(list);
+  let dumbCurr = list.head;
+  let dumbdumbCurr = dumbList.head;
+  while(dumbCurr !== null){
+    if(dumbCurr.value === dumbdumbCurr.value){
+      return dumbdumbCurr.value;
+    } /*else if(dumbCurr.next.value === dumbdumbCurr.value){
+      return dumbdumbCurr.value;
+    }*/
+    dumbCurr = dumbCurr.next;
+    dumbdumbCurr = dumbdumbCurr.next;
+  }
+  return 'cant find middle of even list'
+}
+
 //console.log(display(SLL));
 //console.log(ListSize(SLL));
 //console.log(isEmpty(SLL));
@@ -107,7 +123,7 @@ function thrdFromEnd(list){
 //console.log(findLast(SLL));
 //reverseList(SLL);
 //console.log(thrdFromEnd(SLL));
-
+console.log(dumbFindMid(SLL));
 
 /*
 REMOVES ANY DUPLICATES IN AN ARRAYLIST
