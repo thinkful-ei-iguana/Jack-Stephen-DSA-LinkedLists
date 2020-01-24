@@ -13,7 +13,7 @@ class DoublyLinkedList {
   }
 
   insertFirst(item) {
-    if(this.foot === null) {
+    if (this.foot === null) {
       this.head = new _Node(item, null, null);
       this.foot = this.head;
     } else {
@@ -22,7 +22,7 @@ class DoublyLinkedList {
   }
 
   insertLast(item) {
-    if(this.head === null) {
+    if (this.head === null) {
       this.insertFirst(item);
     } else {
       this.foot = new _Node(item, this.foot, null);
@@ -31,16 +31,37 @@ class DoublyLinkedList {
 
   insertBefore(item, itemBefore) {
     const newNode = new _Node(item, null, null)
-    if(!this.head) {
+    if (!this.head) {
       return null;
     } else {
       let checkItem = this.head;
-      while (checkItem.value !== itemBefore && checkItem === null) {
+      while (checkItem !== null) {
+        if (checkItem.value === itemBefore) {
+          newNode.prev = checkItem.prev;
+          newNode.next = checkItem;
+          checkItem.prev = newNode;
+          return;
+        }
         checkItem = checkItem.next;
       }
-      newNode.prev = checkItem.prev;
-      newNode.next = checkItem;
-      checkItem.prev = newNode; 
+
+    }
+  }
+
+  insertAfter(item, itemAfter) {
+    const newNode = new _Node(item, null, null);
+    if (!this.head) {
+      return null;
+    }
+    let checkItem = this.foot;
+    while (checkItem !== null) {
+      if (checkItem.value === itemAfter) {
+        newNode.prev = checkItem;
+        newNode.next = checkItem.next;
+        checkItem.next = newNode;
+        return;
+      }
+      checkItem = checkItem.prev;
     }
   }
 }
