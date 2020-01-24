@@ -101,3 +101,20 @@ function WhatDoesThisProgramDo(lst) {
 }
 
 */
+
+function reverseList(list) {
+  const newList = new LinkedList;
+  if(list.head === null) {
+    return null;
+  } else {
+    let currNode = list.head;
+    while(currNode !== null) {
+      newList.insertFirst(currNode.value);
+      currNode = currNode.next;
+    }
+  }
+  console.log(display(newList));
+  return newList;
+}
+
+reverseList(SLL);
