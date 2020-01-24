@@ -105,6 +105,16 @@ class DoublyLinkedList {
       current = current.next;
     }
   }
+
+  find(item){
+    let current = this.head;
+    while(current !== null){
+      if(current.value === item){
+        return current;
+      }
+      current = current.next;
+    }
+  }
 }
 
 module.exports = DoublyLinkedList;

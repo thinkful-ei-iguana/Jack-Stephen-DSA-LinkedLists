@@ -197,7 +197,7 @@ function main2() {
   DLL.insertBefore(6, 5);
   DLL.remove(5);
   DLL.insertAfter(7, 6);
-  //console.log(DLL.head.next);
+  console.log(DLL.find(6));
   console.log(DLL.head.next.next);
 } 
 
