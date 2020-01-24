@@ -144,8 +144,8 @@ function cycleList(list){
   return false;
 }
 
-console.log(cycleList(CycleList));
-console.log(CycleList);
+//console.log(cycleList(CycleList));
+//console.log(CycleList);
 //console.log(ListSize(SLL));
 //console.log(isEmpty(SLL));
 //console.log(findPrev(SLL, 'Apollo'));
@@ -181,11 +181,23 @@ const DLL = new DoublyLinkedList;
 
 function main2() {
   DLL.insertFirst(1);
-  DLL.insertLast(2);
   DLL.insertFirst(3);
-  DLL.insertLast(4);
+  DLL.insertFirst(2);
+  DLL.insertFirst(4);
+  //console.log(DLL);
+  //DLL.insertLast(2);
+  //console.log(DLL);
+  //
+  //console.log(DLL);
+  //
+  //
 
-  console.log(DLL);
+  DLL.insertLast(4);
+  DLL.insertAt(5, 2);
+  DLL.insertBefore(6, 5);
+  DLL.insertAfter(7, 6);
+  console.log(DLL.head.next);
+  console.log(DLL.head.next.next);
 } 
 
 main2();
