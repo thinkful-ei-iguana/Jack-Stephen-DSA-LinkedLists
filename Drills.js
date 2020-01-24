@@ -73,12 +73,40 @@ function findLast(list){
   }
 }
 
+function reverseList(list) {
+  const newList = new LinkedList;
+  if(list.head === null) {
+    return null;
+  } else {
+    let currNode = list.head;
+    while(currNode !== null) {
+      newList.insertFirst(currNode.value);
+      currNode = currNode.next;
+    }
+  }
+  console.log(display(newList));
+  return newList;
+}
+
+function thrdFromEnd(list){
+  let current = list.head;
+  let prev = list.head;
+  let res = list.head;
+  while(current.next !== null){
+    res = prev;
+    prev = current;
+    current = current.next;
+  }
+  return res.value;
+}
+
 //console.log(display(SLL));
 //console.log(ListSize(SLL));
-console.log(isEmpty(SLL));
-console.log(findPrev(SLL, 'Apollo'));
-console.log(findLast(SLL));
-
+//console.log(isEmpty(SLL));
+//console.log(findPrev(SLL, 'Apollo'));
+//console.log(findLast(SLL));
+//reverseList(SLL);
+//console.log(thrdFromEnd(SLL));
 
 
 /*
@@ -102,19 +130,5 @@ function WhatDoesThisProgramDo(lst) {
 
 */
 
-function reverseList(list) {
-  const newList = new LinkedList;
-  if(list.head === null) {
-    return null;
-  } else {
-    let currNode = list.head;
-    while(currNode !== null) {
-      newList.insertFirst(currNode.value);
-      currNode = currNode.next;
-    }
-  }
-  console.log(display(newList));
-  return newList;
-}
 
-reverseList(SLL);
+
