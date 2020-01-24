@@ -31,4 +31,15 @@ function display(SLL){
   return res;
 }
 
-console.log(display(SLL));
+function ListSize(list){
+  let count = 0;
+  let current = SLL.head;
+  while(current != null){
+    count++;
+    current = current.next;
+  }
+  return count;
+}
+
+//console.log(display(SLL));
+//console.log(ListSize(SLL));
