@@ -78,3 +78,26 @@ function findLast(list){
 console.log(isEmpty(SLL));
 console.log(findPrev(SLL, 'Apollo'));
 console.log(findLast(SLL));
+
+
+
+/*
+REMOVES ANY DUPLICATES IN AN ARRAYLIST
+TIME COMPLEXITY OF O(n^2)
+function WhatDoesThisProgramDo(lst) {
+    let current = lst.head; 1
+    while (current !== null) n {
+        let newNode = current; 1 
+        while (newNode.next !== null) n {
+            if (newNode.next.value === current.value) { 1
+                newNode.next = newNode.next.next; 1
+            }
+            else {
+                newNode = newNode.next; 1
+            }
+        }
+        current = current.next;
+    }
+}
+
+*/
