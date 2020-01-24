@@ -48,6 +48,21 @@ function isEmpty(list){
   return false;
 }
 
+function findPrev(list, item){
+  
+  let current = list.head;
+  let prev = list.head;
+
+  while(current !== null){
+    if(current.value === item){
+      return prev.value;
+    }
+    prev = current; 
+    current = current.next;
+  }
+}
+
 //console.log(display(SLL));
 //console.log(ListSize(SLL));
 console.log(isEmpty(SLL));
+console.log(findPrev(SLL, 'Apollo'));
