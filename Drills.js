@@ -62,7 +62,19 @@ function findPrev(list, item){
   }
 }
 
+function findLast(list){
+  let current = list.head;
+
+  while(current !== null){
+    if(current.next === null){
+      return current;
+    }
+    current = current.next;
+  }
+}
+
 //console.log(display(SLL));
 //console.log(ListSize(SLL));
 console.log(isEmpty(SLL));
 console.log(findPrev(SLL, 'Apollo'));
+console.log(findLast(SLL));
