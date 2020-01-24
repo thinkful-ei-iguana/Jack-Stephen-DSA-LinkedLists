@@ -91,6 +91,20 @@ class DoublyLinkedList {
     current.prev.next = newNode;
     current.prev = newNode;
   }
+
+  remove(item){
+    if(this.head === null){
+      return;
+    }
+    let current = this.head;
+    while(current !== null){
+      if(current.value === item){
+        current.next.prev = current.prev;
+        current.prev.next = current.next; 
+      }
+      current = current.next;
+    }
+  }
 }
 
 module.exports = DoublyLinkedList;
