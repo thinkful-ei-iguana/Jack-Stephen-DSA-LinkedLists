@@ -70,6 +70,34 @@ class LinkedList {
     }
   }
 
+  insertAt(item, index){
+    let newNode = new _Node(item, null);
+    if(index < 0){
+      console.log('index out of bounds');
+      return;
+    }
+    if(index === 0){
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
+    }
+    
+    
+    let prev = this.head;
+    let current = this.head;
+    for(let i =0; i < index; i++){
+      if(current === null){
+        console.log('index out of bounds');
+        return;
+      }
+      prev = current;
+      current = current.next;
+    }
+
+    newNode.next = current;
+    prev.next = newNode;
+  }
+
   find(item) {
     let currNode = this.head;
 
