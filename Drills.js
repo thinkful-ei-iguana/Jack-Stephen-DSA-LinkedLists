@@ -15,7 +15,7 @@ function main() {
   SLL.insertAfter('Freyja', 'Typo');
   SLL.insertAt('Test', 0);
 
-  console.log(SLL.find('Test'));
+  //console.log(SLL.find('Test'));
 }
 
 main();
@@ -41,5 +41,13 @@ function ListSize(list){
   return count;
 }
 
+function isEmpty(list){
+  if(list.head === null){
+    return true;
+  }
+  return false;
+}
+
 //console.log(display(SLL));
 //console.log(ListSize(SLL));
+console.log(isEmpty(SLL));
