@@ -56,6 +56,20 @@ class LinkedList {
     return;
   }
 
+  insertAfter(item, itemAfter) {
+    const newNode = new _Node(item, null);
+    if (!this.head) {
+      return null;
+    } else {
+      let current = this.head;
+      while ((current.value !== itemAfter) && (current !== null)) {
+        current = current.next;
+      }
+      newNode.next = current.next;
+      current.next = newNode;
+    }
+  }
+
   find(item) {
     let currNode = this.head;
 
