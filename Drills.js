@@ -175,5 +175,17 @@ function WhatDoesThisProgramDo(lst) {
 
 */
 
+const DoublyLinkedList = require('./DoublyLinkedList');
 
+const DLL = new DoublyLinkedList;
 
+function main2() {
+  DLL.insertFirst(1);
+  DLL.insertLast(2);
+  DLL.insertFirst(3);
+  DLL.insertLast(4);
+
+  console.log(DLL);
+} 
+
+main2();
