@@ -180,7 +180,11 @@ const DoublyLinkedList = require('./DoublyLinkedList');
 const DLL = new DoublyLinkedList;
 
 function main2() {
+  DLL.insertFirst(4);
+  DLL.insertFirst(3);
+  DLL.insertFirst(2);
   DLL.insertFirst(1);
+ /* DLL.insertFirst(1);
   DLL.insertFirst(3);
   DLL.insertFirst(2);
   DLL.insertFirst(4);
@@ -198,7 +202,26 @@ function main2() {
   DLL.remove(5);
   DLL.insertAfter(7, 6);
   console.log(DLL.find(6));
-  console.log(DLL.head.next.next);
+  console.log(DLL.head.next.next);*/
 } 
 
 main2();
+
+function DLLReverse(list){ // 4 3 2 1
+  let front = list.head;    // 2
+  let last = list.foot;
+  while(front !== last){
+    let temp1 = front.value;
+    front.value = last.value;
+    last.value = temp1;
+    if(front.next === last){
+      return;
+    }
+    front = front.next;
+    last = last.prev;
+  }
+}
+
+console.log(DLL);
+DLLReverse(DLL);
+console.log(DLL);
