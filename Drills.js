@@ -8,7 +8,14 @@ function main() {
   
   CycleList.insertLast('1');
   CycleList.insertLast('2');
-  CycleList.head.next.next = CycleList.head;
+  CycleList.insertLast('3');
+  CycleList.insertBefore('4', '1');
+  CycleList.insertFirst('5');
+  CycleList.insertFirst('6');
+  CycleList.insertFirst('7');
+  CycleList.insertFirst('8');
+  CycleList.insertFirst('9');  
+  CycleList.find('2').next = CycleList.find('1');
 
   SLL.insertLast('Apollo');
   SLL.insertLast('Boomer');
@@ -121,19 +128,24 @@ function dumbFindMid(list){
 }
 
 function cycleList(list){
-  const head = list.head;
-  let current = list.head;
-  while(current !== null){
-    if(current.next === head){
-      return true;
+  const storeList = new LinkedList; 
+  let current = list.head; 
+  while(current !== null){ 
+    storeList.insertLast(current.value);
+    let storeCurr = storeList.head;
+    while(storeCurr !== null){
+      if(current.next.value === storeCurr.value){ 
+        return true;
+      }
+      storeCurr = storeCurr.next;
     }
-    current = current.next;
+    current = current.next; 
   }
   return false;
 }
 
 console.log(cycleList(CycleList));
-//console.log(display(SLL));
+console.log(CycleList);
 //console.log(ListSize(SLL));
 //console.log(isEmpty(SLL));
 //console.log(findPrev(SLL, 'Apollo'));
