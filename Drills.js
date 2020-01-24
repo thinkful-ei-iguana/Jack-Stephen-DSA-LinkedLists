@@ -8,8 +8,9 @@ function main() {
   SLL.insertLast('Helo');
   SLL.insertLast('Husker');
   SLL.insertLast('Starbuck');
+  SLL.insertBefore('Typo', 'Apollo');
 
-  console.log(SLL.find('Apollo'));
+  console.log(SLL.find('Typo'));
 }
 
 main();

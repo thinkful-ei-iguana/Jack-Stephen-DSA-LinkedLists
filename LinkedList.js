@@ -26,6 +26,36 @@ class LinkedList {
     }
   }
 
+  insertBefore(item, itemBefore){
+    let newNode = new _Node(item, null);
+    if(!this.head){
+      return null;
+    }
+
+    if(this.head.value === itemBefore){
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
+    }
+
+    
+    let current = this.head; 
+    let prev = this.head;  
+
+    while(current !== null){
+      if(current.value === itemBefore){
+        newNode.next = current;
+        prev.next = newNode;
+        return;
+      }
+      prev = current; 
+      current = current.next; 
+    }
+
+    console.log(`${itemBefore} not found`);
+    return;
+  }
+
   find(item) {
     let currNode = this.head;
 
