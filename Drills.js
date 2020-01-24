@@ -1,7 +1,10 @@
 const LinkedList = require('./LinkedList');
 
+
+const SLL = new LinkedList();
+
 function main() {
-  const SLL = new LinkedList();
+  
 
   SLL.insertLast('Apollo');
   SLL.insertLast('Boomer');
@@ -16,3 +19,16 @@ function main() {
 }
 
 main();
+
+function display(SLL){
+  let res = [];
+  let current = SLL.head;
+  while(current !== null){
+    res = [...res, current.value];
+    current = current.next;
+  }
+
+  return res;
+}
+
+console.log(display(SLL));
