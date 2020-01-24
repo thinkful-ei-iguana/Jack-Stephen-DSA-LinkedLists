@@ -2,9 +2,13 @@ const LinkedList = require('./LinkedList');
 
 
 const SLL = new LinkedList();
+const CycleList = new LinkedList;
 
 function main() {
   
+  CycleList.insertLast('1');
+  CycleList.insertLast('2');
+  CycleList.head.next.next = CycleList.head;
 
   SLL.insertLast('Apollo');
   SLL.insertLast('Boomer');
@@ -116,6 +120,19 @@ function dumbFindMid(list){
   return 'cant find middle of even list'
 }
 
+function cycleList(list){
+  const head = list.head;
+  let current = list.head;
+  while(current !== null){
+    if(current.next === head){
+      return true;
+    }
+    current = current.next;
+  }
+  return false;
+}
+
+console.log(cycleList(CycleList));
 //console.log(display(SLL));
 //console.log(ListSize(SLL));
 //console.log(isEmpty(SLL));
@@ -123,7 +140,7 @@ function dumbFindMid(list){
 //console.log(findLast(SLL));
 //reverseList(SLL);
 //console.log(thrdFromEnd(SLL));
-console.log(dumbFindMid(SLL));
+//console.log(dumbFindMid(SLL));
 
 /*
 REMOVES ANY DUPLICATES IN AN ARRAYLIST
